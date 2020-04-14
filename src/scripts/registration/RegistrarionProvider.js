@@ -12,7 +12,7 @@ const dispatchStateChangeEvent = () => {
 export const useRegistration = () => registration.slice()
 
 export const getRegistration = () => {
-    return fetch('http://localhost:8088/registration')
+    return fetch('http://localhost:8088/users')
         .then(response => response.json())
         .then(parsedRegistration => {
             registration = parsedRegistration
@@ -21,7 +21,7 @@ export const getRegistration = () => {
 }
 
 export const saveRegistration = registration => {
-    return fetch('http://localhost:8088/registration', {
+    return fetch('http://localhost:8088/users', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

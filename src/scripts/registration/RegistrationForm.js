@@ -1,5 +1,19 @@
+import { saveRegistration } from "./RegistrarionProvider.js"
+
 const contentTarget = document.querySelector(".registration_container")
 
+contentTarget.addEventListener("click", clickEvent => {
+    if(clickEvent.target.id === "registerButton") {
+        const newRegistration = {
+            username: document.querySelector("#registrationEmail").value,
+            email: document.querySelector("#registrationUsername").value ,
+            password: document.querySelector("#registrationPassword").value
+        }
+
+        saveRegistration(newRegistration)
+
+    }
+})
 
 const render = () => {
     contentTarget.innerHTML = `
@@ -26,6 +40,7 @@ const render = () => {
                 <input type="text" name="registrationConfirmPassword" id="registrationConfirmPassword">
             </fieldset>         
         </form>
+        <button id="registerButton">Register</button>
     `
 
 }
