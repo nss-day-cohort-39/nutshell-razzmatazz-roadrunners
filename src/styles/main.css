@@ -1,0 +1,7 @@
+.events_container {
+    display: flex;
+    border: solid;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+}
