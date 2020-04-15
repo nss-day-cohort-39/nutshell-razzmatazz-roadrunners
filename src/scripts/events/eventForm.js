@@ -1,3 +1,4 @@
+//this module is responsible for the event form dialog 
 import { saveEvents } from "./EventsProvider.js"
 
 const eventHub = document.querySelector(".container")
@@ -40,11 +41,10 @@ export const eventFormDialog = () => {
   <section class="button">
      <button id="saveEvent" type="submit">Save Event</button>    
   </section>
-  <button class ="button" id= "button--close">Close</button>
-  </dialog>`
-//listening for close button clicked
+ `
+//listening for save button clicked to close dialog
   eventHub.addEventListener("click", e =>{
-    if(e.target.id === "button--close"){
+    if(e.target.id === "saveEvent"){
      document.querySelector("#eventForm").close()
     }
  })

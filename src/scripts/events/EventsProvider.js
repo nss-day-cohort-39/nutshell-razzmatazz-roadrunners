@@ -6,7 +6,14 @@ const dispatchStateChangeEvent = () => {
     const eventsStateChanged = new CustomEvent("eventsStateChanged")
     eventHub.dispatchEvent(eventsStateChanged)
 }
-export const useEvents = () => events.slice()
+export const useEvents = () => {
+    const sortedByDateEvents = events.sort((a,b)=>{
+        if(a.date < b.date) {return -1}
+        if(a.date > b.date) {return 1}
+        return 0;
+    })
+    return sortedByDateEvents.slice()
+}
 
 let events = []
 

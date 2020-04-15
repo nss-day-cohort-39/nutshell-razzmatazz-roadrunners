@@ -1,3 +1,4 @@
+//this module is responsible for rendering the events container to DOM
 import { getEvents, useEvents, deleteEvents } from "./EventsProvider.js"
 import { eventsHTMLrep } from "./events.js"
 
@@ -14,9 +15,10 @@ const eventHub = document.querySelector(".container")
  const render = () => {
     getEvents().then(()=>{
        
-        const allTheEvents = useEvents()
+      const allTheEvents = useEvents()
          
-        contentTarget.innerHTML = allTheEvents.map(currentEventObject =>{
+      contentTarget.innerHTML = allTheEvents.map(currentEventObject =>{
+          
             return eventsHTMLrep(currentEventObject)
         }).join(" ")
      })

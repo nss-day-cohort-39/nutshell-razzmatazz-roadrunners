@@ -1,5 +1,7 @@
+//this module is responsible for the add event button
 const contentTarget = document.querySelector("#addEvent")
 const eventHub = document.querySelector(".container")
+
 const addEventButton = () =>{
   return  `<button id="addEvent">Add Event</button>`
 }

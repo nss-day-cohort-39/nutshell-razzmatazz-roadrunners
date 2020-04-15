@@ -1,11 +1,29 @@
+//this module is responsible for the events HTML representation
+import { useEvents } from "./EventsProvider.js"
+
 export const eventsHTMLrep = (event) => {
-    return `
-    <article class="events" id="event--${event.id}>
-     <div>Event: ${event.name}</div>
-     <div>${event.date} ${event.time}</div>
-     <div>${event.location}</div>
-     <div>${event.notes}</div>
-     <button id="deleteEvent--${event.id}">Delete</button>
-    </article>
-    `
+    const events = useEvents()
+    if (event === events[0]) {
+        return `
+        <article class="eventsNext" id="event--${event.id}">
+          <div><h3>Next Event</h3></div>
+         <div><b>Event:</b> ${event.name}</div>
+         <div><b>Date:</b> ${event.date} Time: ${event.time}</div>
+         <div><b>Where:</b> ${event.location}</div>
+         <div><b>Notes:</b> ${event.notes}</div>
+         <button class="eventDelete" id="deleteEvent--${event.id}">Delete</button>
+        </article>
+        `
+    } else {
+        return `
+        <article class="events" id="event--${event.id}">
+         <div><b>Event:</b> ${event.name}</div>
+         <div><b>Date:</b> ${event.date} Time: ${event.time}</div>
+         <div><b>Where:</b> ${event.location}</div>
+         <div><b>Notes:</b> ${event.notes}</div>
+         <button class="eventDelete" id="deleteEvent--${event.id}">Delete</button>
+        </article>
+        `
+    }
+   
 }
