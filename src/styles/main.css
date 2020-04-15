@@ -1,0 +1,9 @@
+#news__container {
+    border: 1px solid black;
+    margin: 1em;
+    width: 15em
+}
+
+.newsItem {
+    margin: 1em;
+}
