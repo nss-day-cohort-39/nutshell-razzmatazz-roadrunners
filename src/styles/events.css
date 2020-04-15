@@ -38,3 +38,7 @@
 .eventDelete:hover {
 background-color: red;
 }
+#nextEventHeader {
+    text-align: center;
+    text-decoration: underline;
+}
