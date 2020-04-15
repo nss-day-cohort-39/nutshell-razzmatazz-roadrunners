@@ -1,4 +1,4 @@
-import { saveRegistration } from "./RegistrarionProvider.js"
+import { saveUsers } from "./RegistrarionProvider.js"
 
 const contentTarget = document.querySelector(".registration_container")
 
@@ -10,7 +10,7 @@ contentTarget.addEventListener("click", clickEvent => {
             password: document.querySelector("#registrationPassword").value
         }
 
-        saveRegistration(newRegistration)
+        saveUsers(newRegistration)
 
     }
 })
