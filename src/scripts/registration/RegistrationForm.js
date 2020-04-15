@@ -4,8 +4,8 @@ import { DisplayRegistrationText } from "./DisplayRegistrationText.js"
 const contentTarget = document.querySelector(".registration_container")
 const eventHub = document.querySelector("#container");
 
-// Adding data to our database.json file uppon the click of the correct id.
 contentTarget.addEventListener("click", clickEvent => {
+    // Adding data to our database.json file uppon the click of the correct id.
     if(clickEvent.target.id === "registerButton") {
         const newRegistration = {
             username: document.querySelector("#registrationEmail").value,
@@ -13,8 +13,17 @@ contentTarget.addEventListener("click", clickEvent => {
             password: document.querySelector("#registrationPassword").value
         }
 
-        saveUsers(newRegistration)
+        // Checking to see if the two passwords match
+        let passwordOne = document.querySelector("#registrationPassword").value
+        let passwordTwo = document.querySelector("#registrationConfirmPassword").value
+
+        if(passwordOne === passwordTwo) {
+            saveUsers(newRegistration)
+        } else if (passwordOne !== passwordTwo) {
+            alert("Password Does Not Match")
+        }
     }
+    
 })
 
 // Removing invisible class upon clicking the anchor link for registration
