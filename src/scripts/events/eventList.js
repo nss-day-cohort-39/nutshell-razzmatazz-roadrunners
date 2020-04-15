@@ -1,4 +1,4 @@
-//this module is responsible for rendering the events container to DOM
+//this module is responsible for rendering the events container to Dom
 import { getEvents, useEvents, deleteEvents } from "./EventsProvider.js"
 import { eventsHTMLrep } from "./events.js"
 
