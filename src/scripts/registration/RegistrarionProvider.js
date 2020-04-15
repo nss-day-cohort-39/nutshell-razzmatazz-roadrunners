@@ -1,33 +1,33 @@
-let registration = []
+let users = []
 
 const eventHub = document.querySelector("#container")
 
 const dispatchStateChangeEvent = () => {
-    const registrationStateChangedEvent = new CustomEvent("registrationStateChanged")
+    const usersStateChangedEvent = new CustomEvent("usersStateChanged")
 
-    eventHub.dispatchEvent(registrationStateChangedEvent)
+    eventHub.dispatchEvent(usersStateChangedEvent)
 }
 
 // Allow other modules to get a copy of the application state
-export const useRegistration = () => registration.slice()
+export const useUsers = () => users.slice()
 
-export const getRegistration = () => {
+export const getUsers = () => {
     return fetch('http://localhost:8088/users')
         .then(response => response.json())
-        .then(parsedRegistration => {
-            registration = parsedRegistration
+        .then(parsedUsers => {
+            users = parsedUsers
         })
 
 }
 
-export const saveRegistration = registration => {
+export const saveUsers = users => {
     return fetch('http://localhost:8088/users', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(registration)
+        body: JSON.stringify(users)
     })
-    .then(getRegistration)
+    .then(getUsers)
     .then(dispatchStateChangeEvent)
 }
