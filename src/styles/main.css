@@ -1,3 +1,5 @@
+@import "./events.css";
+
 #news__container {
     border: 1px solid black;
     margin: 1em;
@@ -7,3 +9,4 @@
 .newsItem {
     margin: 1em;
 }
+
