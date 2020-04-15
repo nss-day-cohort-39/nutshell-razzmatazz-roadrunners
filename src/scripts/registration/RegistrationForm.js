@@ -17,6 +17,7 @@ contentTarget.addEventListener("click", clickEvent => {
         let passwordOne = document.querySelector("#registrationPassword").value
         let passwordTwo = document.querySelector("#registrationConfirmPassword").value
 
+        // If matched then our new user will be registered
         if(passwordOne === passwordTwo) {
             saveUsers(newRegistration)
         } else if (passwordOne !== passwordTwo) {
@@ -32,32 +33,35 @@ eventHub.addEventListener("allRegistrationClicked", event => {
     document.querySelector(".registrationButton").classList.remove("invisible")       
 })
 
+//HTML that will be viewed on the web browser
 const render = () => {
     contentTarget.innerHTML = `
-        <h1>Welcome to Nutshell Registration</h1>   
-        ${DisplayRegistrationText()}
-        <form action="" class="registration invisible">
-            <fieldset class="registration_email">
-                <label for="registrationEmail">Email</label>
-                <input type="text" name="registrationEmail" id="registrationEmail">
-            </fieldset>
+        <article>
+            <h1>Welcome to Nutshell Registration</h1>   
+            ${DisplayRegistrationText()}
+            <form action="" class="registration invisible">
+                <fieldset class="registration_email">
+                    <label for="registrationEmail">Email</label>
+                    <input type="text" name="registrationEmail" id="registrationEmail">
+                </fieldset>
 
-            <fieldset class="registration_username">
-                <label for="registrationUsername">Username</label>
-                <input type="text" name="registrationUsername" id="registrationUsername">
-            </fieldset>
+                <fieldset class="registration_username">
+                    <label for="registrationUsername">Username</label>
+                    <input type="text" name="registrationUsername" id="registrationUsername">
+                </fieldset>
 
-            <fieldset class="registration_password">
-                <label for="registrationPassword">Password</label>
-                <input type="password" name="registrationPassword" id="registrationPassword">
-            </fieldset>
+                <fieldset class="registration_password">
+                    <label for="registrationPassword">Password</label>
+                    <input type="password" name="registrationPassword" id="registrationPassword">
+                </fieldset>
 
-            <fieldset class="registration_confirm_password">
-                <label for="registrationConfirmPassword">Confirm Password</label>
-                <input type="password" name="registrationConfirmPassword" id="registrationConfirmPassword">
-            </fieldset>         
-        </form>
-        <button id="registerButton" class="registrationButton invisible">Register</button>
+                <fieldset class="registration_confirm_password">
+                    <label for="registrationConfirmPassword">Confirm Password</label>
+                    <input type="password" name="registrationConfirmPassword" id="registrationConfirmPassword">
+                </fieldset>         
+            </form>
+            <button id="registerButton" class="registrationButton invisible">Register</button>
+        </article>
     `
 
 }
