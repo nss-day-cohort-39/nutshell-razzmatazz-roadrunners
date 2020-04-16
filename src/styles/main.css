@@ -1,6 +1,7 @@
 @import "./events.css";
 @import "./news.css";
 
+@import "./registration.css";
 
 .welcome_container {
  margin: 2em;
