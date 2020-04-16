@@ -8,8 +8,6 @@ export const taskFormDialog = () => {
     contentTarget.innerHTML = `
         <dialog class"dialog--taskForm" id="taskForm">
 
-        <input type="checkbox" class="checkbox1" id="chkbx"  name="check[]" />
-
         <form action"">
         <fieldset>
             <label for="taskName">Task</label>
@@ -29,6 +27,8 @@ export const taskFormDialog = () => {
             <button id="saveTask" type="submit">Save Task</button>    
          </section>
     `
+
+
     eventHub.addEventListener("click", e => {
         if (e.target.id === "saveTask") {
             document.querySelector("#taskForm").close()

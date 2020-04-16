@@ -31,4 +31,6 @@ contentTarget.addEventListener("click", e => {
         const [pefix, taskId] = e.target.id.split("--")
         deleteTasks(taskId)
     }
+    
 })
+
