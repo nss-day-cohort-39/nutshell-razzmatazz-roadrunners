@@ -1,28 +1,26 @@
-import { Chat } from "./Chat.js"
-import { getChat, useChat } from "./ChatProvider.js"
+import { ChatHTML } from "./Chat.js"
+import { saveChat, useChat } from "./ChatProvider.js"
+import { ChatBoxHTML } from "./ChatBox.js"
 
-const contentTarget = document.querySelector(".chat_container")
-const eventhub = document.querySelector(".container")
-
-contentTarget.addEvent("chatStateChanged", customEvent => {
+const eventhub = document.querySelector('#container')
+const chatContentTarget = document.querySelector(".chat_container")
+const chatTextContenttarget = document.querySelector(
+    '.chatText_container'
+)
+export const ChatList = () => {
     render()
-})
+}
 
 
-const render = () => {
 
-getChat().then(() => {
-    const allTheChat = useChat()
-    
-    contentTarget.innerHTML = allTheChat.map(
-        currentChatObject => {
 
-            return Chat(currentChatObject)
-        }
-        ).join("")
-    })
+
+const render = (chat) => {
+
+
 }
 
 export const ChatList = () => {
-    render()
+    const messages = useChats()
+    render(messages)
 }

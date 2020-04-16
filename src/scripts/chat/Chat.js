@@ -1,4 +1,4 @@
-export const Chat = (chatObject) => {
+export const ChatHTML = (chatObject) => {
     return `
     <section class="chat">
     <p>${chatObject.chatText}</p>
