@@ -1,3 +1,10 @@
 .invisible {
-    display:none;
+  display: none;
+}
+.registration_container {
+  border: solid;
+  height: 5rem;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: white;
 }
