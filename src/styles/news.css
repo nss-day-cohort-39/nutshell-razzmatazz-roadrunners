@@ -1,0 +1,44 @@
+#news__container {
+    display: flex;
+    margin: 1em;
+    width: 15em;
+    flex-direction: row;
+}
+
+.news_container {
+    display: flex;
+    flex-wrap: wrap;
+    border: solid;
+    justify-content: center;
+    border-radius: 5%;
+}
+
+.newsItem {
+    border: solid;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 5%;
+}
+
+#addAnArticleButton {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+    font-size: large;
+    font-family: sans-serif;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    border-radius: 5%;
+}
+
+#addArticle {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+    font-size: large;
+    font-family: sans-serif;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    border-radius: 5%;
+
+}
