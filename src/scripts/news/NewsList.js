@@ -3,17 +3,14 @@
     do what they're supposed to do"
 */
 
-import { getNews, useNews } from "./NewsProvider.js"
+import { getNews, useNews, deleteNews } from "./NewsProvider.js"
 import { news } from "./News.js"
 
 
 
 const eventHub = document.querySelector('.container')
-const contentTarget = document.querySelector('.news_container')
+const contentTarget = document.querySelector('#addArticle_container')
 
-// eventHub.addEventListener("addArticleButtonClicked", customEvent => {
-//     render()
-// })
 
 const render = () => {
     getNews().then(() => {
@@ -30,4 +27,16 @@ const render = () => {
 export const newsListComponent = () => {
     render()
 }
+
+eventHub.addEventListener("newsStateChanged", CustomEvent => {
+    render()
+})
+
+contentTarget.addEventListener("click", event =>{
+    if(event.target.id.startsWith("deleteArticle--")){
+        const [taco, newsId] = event.target.id.split("--")
+       deleteNews(newsId)
+    }
+    
+})
 

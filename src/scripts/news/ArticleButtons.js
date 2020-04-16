@@ -1,6 +1,6 @@
 
 const eventHub = document.querySelector("#container")
-const contentTarget = document.querySelector("#addArticle_container")
+const contentTarget = document.querySelector("#addArticle")
 
 const addArticleButton = () => {
     return `
@@ -21,7 +21,7 @@ contentTarget.addEventListener("click", clickEvent => {
     }
 })
 
-const saveArticleTarget = document.querySelector(".newsDialog")
+const saveArticleTarget = document.querySelector(".addArticleFormDialog")
 
 saveArticleTarget.addEventListener("click", clickEvent => {
     if(clickEvent.target.id === "saveAnArticleButton") {
@@ -29,3 +29,6 @@ saveArticleTarget.addEventListener("click", clickEvent => {
         eventHub.dispatchEvent(saveArticle)
     }
 })
+
+
+

@@ -9,8 +9,10 @@ export const news = (newsObject) => {
                 <h2 class="newsTitle">
                     <a href="${newsObject.url}">${newsObject.title}</a>
                 </h2>
-                <h3>${newsObject.comments}</h3>
-                <button id="deleteArticleBtn">Delete</button>
+                <h3>${newsObject.comment}</h3>
+                <button class="deleteArticleButton" id="deleteArticle--${newsObject.id}">Delete</button>
+                <p>${new Date(newsObject.timestamp).toLocaleDateString()}</p>
+
             </section>
         </div>
     `

@@ -1,12 +1,8 @@
 @import "./events.css";
+@import "./news.css";
 
-#news__container {
-    border: 1px solid black;
-    margin: 1em;
-    width: 15em
+
+.welcome_container {
+ margin: 2em;
+ justify-content: center;
 }
-
-.newsItem {
-    margin: 1em;
-}
-

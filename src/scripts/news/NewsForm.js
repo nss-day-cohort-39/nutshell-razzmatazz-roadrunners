@@ -1,5 +1,9 @@
+
+import { saveNews } from "./NewsProvider.js"
+
+
 const eventHub = document.querySelector("#container")
-const contentTarget = document.querySelector('.newsDialog')
+const contentTarget = document.querySelector('.addArticleFormDialog')
 
 
 export const newsForm = () => {
@@ -20,6 +24,7 @@ export const newsForm = () => {
                     <textarea name="comments" id="commentField" cols="60" rows="2"></textarea>
                 </fieldset>
                 <button id="saveAnArticleButton">Save This Article</button>
+                
             </form>
     </dialog>
     `
@@ -34,5 +39,24 @@ eventHub.addEventListener("addArticleFormClicked", CustomEvent => {
 })
 
 eventHub.addEventListener("saveArticleButtonClicked", CustomEvent => {
-    
+
 })
+
+eventHub.addEventListener("click", event => {
+    if(event.target.id === "saveAnArticleButton") {
+        const articleTitle = document.querySelector("#titleField").value
+        const articleUrl = document.querySelector("#urlField").value
+        const articleComment = document.querySelector("#commentField").value
+        
+
+        const newNews = {
+            title: articleTitle,
+            url: articleUrl,
+            comment: articleComment,
+            timestamp: Date.now()
+        }
+        saveNews(newNews)
+    }
+})
+
+
