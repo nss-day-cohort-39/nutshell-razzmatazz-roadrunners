@@ -21,7 +21,6 @@ export const newsForm = () => {
                 </fieldset>
                 <button id="saveAnArticleButton">Save This Article</button>
             </form>
-        
     </dialog>
     `
 }
@@ -32,4 +31,8 @@ export const render = () => {
 
 eventHub.addEventListener("addArticleFormClicked", CustomEvent => {
     document.querySelector("#newsFormContainer").showModal()
+})
+
+eventHub.addEventListener("saveArticleButtonClicked", CustomEvent => {
+    
 })

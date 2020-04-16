@@ -1,4 +1,3 @@
-import { news } from "./News.js"
 
 const eventHub = document.querySelector("#container")
 const contentTarget = document.querySelector("#addArticle_container")
@@ -19,5 +18,14 @@ contentTarget.addEventListener("click", clickEvent => {
     if(clickEvent.target.id === "addAnArticleButton") {
         const showAddArticleForm = new CustomEvent("addArticleFormClicked")
         eventHub.dispatchEvent(showAddArticleForm)
+    }
+})
+
+const saveArticleTarget = document.querySelector(".newsDialog")
+
+saveArticleTarget.addEventListener("click", clickEvent => {
+    if(clickEvent.target.id === "saveAnArticleButton") {
+        const saveArticle = new CustomEvent("saveArticleButtonClicked")
+        eventHub.dispatchEvent(saveArticle)
     }
 })

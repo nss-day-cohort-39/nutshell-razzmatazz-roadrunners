@@ -30,3 +30,4 @@ const render = () => {
 export const newsListComponent = () => {
     render()
 }
+
