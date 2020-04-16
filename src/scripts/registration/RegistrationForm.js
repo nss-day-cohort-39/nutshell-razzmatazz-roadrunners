@@ -1,4 +1,4 @@
-import { saveUsers } from "./RegistrarionProvider.js"
+import { saveUsers, getUsers, useUsers } from "./RegistrarionProvider.js"
 import { DisplayRegistrationText } from "./DisplayRegistrationText.js"
 
 const contentTarget = document.querySelector(".registration_container")
@@ -6,10 +6,10 @@ const eventHub = document.querySelector("#container");
 
 contentTarget.addEventListener("click", clickEvent => {
     // Adding data to our database.json file uppon the click of the correct id.
-    if(clickEvent.target.id === "registerButton") {
+    if (clickEvent.target.id === "registerButton") {
         const newRegistration = {
-            username: document.querySelector("#registrationEmail").value,
-            email: document.querySelector("#registrationUsername").value ,
+            username: document.querySelector("#registrationUsername").value,
+            email: document.querySelector("#registrationEmail").value,
             password: document.querySelector("#registrationPassword").value
         }
 
@@ -18,19 +18,30 @@ contentTarget.addEventListener("click", clickEvent => {
         let passwordTwo = document.querySelector("#registrationConfirmPassword").value
 
         // If matched then our new user will be registered
-        if(passwordOne === passwordTwo) {
-            saveUsers(newRegistration)
-        } else if (passwordOne !== passwordTwo) {
-            alert("Password Does Not Match")
-        }
+
+
+        getUsers().then(() => {
+            const users = useUsers()
+
+            const dupFound = users.find(users => users.email === newRegistration.email)
+            if (dupFound === undefined) {
+                if (passwordOne === passwordTwo) {
+                    saveUsers(newRegistration)
+                } else if (passwordOne !== passwordTwo) {
+                    alert("Password Does Not Match")
+                }
+            } else {
+                alert("Email Already Exist")
+            }
+        })
     }
-    
+
 })
 
 // Removing invisible class upon clicking the anchor link for registration
 eventHub.addEventListener("allRegistrationClicked", event => {
     document.querySelector(".registration").classList.remove("invisible")
-    document.querySelector(".registrationButton").classList.remove("invisible")       
+    document.querySelector(".registrationButton").classList.remove("invisible")
 })
 
 //HTML that will be viewed on the web browser

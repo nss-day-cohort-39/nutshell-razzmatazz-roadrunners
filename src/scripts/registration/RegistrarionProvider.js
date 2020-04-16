@@ -28,6 +28,6 @@ export const saveUsers = users => {
         },
         body: JSON.stringify(users)
     })
-    .then(getUsers)
-    .then(dispatchStateChangeEvent)
+        .then(getUsers)
+        .then(dispatchStateChangeEvent)
 }
