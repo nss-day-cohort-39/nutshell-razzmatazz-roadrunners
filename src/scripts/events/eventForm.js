@@ -70,7 +70,8 @@ eventHub.addEventListener("click", e => {
             date: eventDate,
             time: eventTime,
             location: eventLocation,
-            notes: eventNotes
+            notes: eventNotes,
+            userId: 1
         }
         saveEvents(newEvent)
     }
