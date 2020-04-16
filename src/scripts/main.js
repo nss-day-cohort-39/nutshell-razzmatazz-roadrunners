@@ -16,7 +16,7 @@ import { getEvents } from "./events/EventsProvider.js";
 import { eventFormDialog } from "./events/eventForm.js";
 import { renderAddEventButton } from "./events/addEventButton.js"
 
-import { getChat } from "./chat/ChatProvider.js";
+import { getChats } from "./chat/chatProvider.js";
 import { ChatList } from "./chat/ChatList.js";
 
 getTasks()
@@ -38,5 +38,5 @@ getEvents()
 eventFormDialog()
 renderAddEventButton()
 registrationForm()
-getChat()
+getChats()
 ChatList()
