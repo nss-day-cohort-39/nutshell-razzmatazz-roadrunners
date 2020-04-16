@@ -1,30 +1,33 @@
 .tasks_conatiner {
-    display: flex;
-    flex-wrap: wrap;
-    border: double;
-    justify-content: center;
-    border-radius: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  border: solid;
+  justify-content: center;
+  width: 15rem;
+  margin: 1rem;
+  background-color: white;
 }
 
 .tasks {
-    border: double;
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 30%;
-    background-color: lightblue;
+  border: solid;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 5%;
+  background-color: lightblue;
 }
 
 #addTask {
-    display: flex;
-    flex-basis: 100%;
-    justify-content: center;
-    font-size: large;
-    margin-left: 5rem;
-    margin-right: 5rem;
-    border-radius: 50%;
-    padding: 0.5rem;
+  justify-content: center;
+  font-size: large;
+  font-family: sans-serif;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  border-radius: 5%;
+  height: 3rem;
+  align-self: flex-end;
+  margin-bottom: 0.5rem;
 }
 
 .taskDelete {
-    margin: .5rem;
+  margin: 0.5rem;
 }
