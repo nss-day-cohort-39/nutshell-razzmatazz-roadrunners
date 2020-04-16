@@ -1,2 +1,9 @@
+@import "./events.css";
+@import "./tasks.css";
+@import "./news.css";
 @import "./registration.css";
-@import "./events.css"
+
+.welcome_container {
+ margin: 2em;
+ justify-content: center;
+}
