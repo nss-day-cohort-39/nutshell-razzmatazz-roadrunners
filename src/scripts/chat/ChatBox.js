@@ -1,6 +1,6 @@
 const eventHub = document.querySelector(".container")
 
-export const ChatBoxHTML = () => {
+export const ChatBox = () => {
     return `
     <section class="messageContainer">
     <input id="chatText" placeholder="Input your mssage here"

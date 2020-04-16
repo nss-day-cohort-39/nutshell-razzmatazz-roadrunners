@@ -1,6 +1,7 @@
+const eventHub = document.querySelector(".container")
+
 let chats = []
 
-const eventHub = document.querySelector(".container")
 const dispatchStateChangeEvent = () => {
     const chatStateChangedEvent = new CustomEvent("chatStateChanged")
     eventHub.dispatchEvent(chatStateChangedEvent)
@@ -8,18 +9,20 @@ const dispatchStateChangeEvent = () => {
 
 // Allow other modules to get a copy of the application state
 
-export const useChat = () => chat.slice()
 
 // Get the state of the chat from the API into the application
 
 export const getChat = () => {
-    return fetch('http://localhost:8088/chat')
-        .then(response => response.json())
-        .then((parsedMessages) => (messages = parsedMessages))
-        }
+    return fetch('http://localhost:8088/chats')
+    .then(response => response.json())
+    .then((parsedChat) => (chats = parsedChat))
+}
+
+export const useChat = () => chats.slice()
+
 
 export const saveChat = chat => {
-    return fetch('http://localhost:8088/notes', {
+    return fetch('http://localhost:8088/chats', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

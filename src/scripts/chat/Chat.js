@@ -1,8 +1,8 @@
-export const ChatHTML = (chatObject) => {
+export const Chat = (chatObject, userObject) => {
     return `
     <section class="chat">
-    <p>${chatObject.chatText}</p>
-    <p>${new Date(noteObject.timestamp).toLocaleDateString()}</p>
+    <div class="username">${userObject.username}</div>
+    <div class="message">${chatObject.chat}</div>
     </section>
     `
 }
