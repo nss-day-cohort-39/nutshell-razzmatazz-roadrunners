@@ -2,6 +2,7 @@
 @import "./tasks.css";
 @import "./news.css";
 @import "./registration.css";
+@import "./chat.css";
 
 .welcome_container {
   margin: 2em;

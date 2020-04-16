@@ -11,14 +11,12 @@ eventhub.addEventListener("chatStateChanged", (customEvent) => {
     render()
 })
 
-contentTarget.addEventListener("click", (clickEvent) => {
-    if (clickEvent,target.id == "sendMessage") {
-        newMessage = document.querySelector("newMessage").value
+chatContentTarget.addEventListener("click", (clickEvent) => {
+    if (clickEvent.target.id === "chat_button") {
+        newMessage = document.querySelector("#newMessage").value
 
         if (newMessage !== "") {
-            const userId = parseInt(sessionStorage.getItem("activeUser"))
             const newMessageObject = {
-                userId: userId,
                 message: newMessage,
             }
             saveChat(newMessageObject)
@@ -32,12 +30,12 @@ const render = () => {
     const users = useUsers()
     const messages = useChats()
     
-    contentTarget.innerHTML = `
+    chatContentTarget.innerHTML = `
     <article class="ChatText">
     ${messages
     .map((message) =>{
         const user = users.find((user) => user.id === message.userId)
-        return chatHTML(message, user)
+        return ChatHTML(message, user)
     })
     .join("")}
     <div class="chatForm">${ChatForm()}</div>

@@ -16,7 +16,7 @@ export const useChats = () => messages.slice()
 export const getChats = () => {
     return fetch('http://localhost:8088/chats')
     .then((response) => response.json())
-    .then((parsedChats) => (chats = parsedChats))
+    .then((parsedChats) => (messages = parsedChats))
 }
 
 
@@ -29,6 +29,6 @@ export const saveChat = chat => {
         },
         body: JSON.stringify(chat)
     })
-    .then(getChat)
+    .then(getChats)
     .then(dispatchStateChangeEvent)
 }

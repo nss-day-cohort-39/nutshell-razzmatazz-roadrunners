@@ -18,6 +18,7 @@ import { renderAddEventButton } from "./events/addEventButton.js"
 
 import { getChats } from "./chat/chatProvider.js";
 import { ChatList } from "./chat/ChatList.js";
+import { getUsers } from "./registration/RegistrarionProvider.js";
 
 getTasks()
 .then(tasksListComponent)
@@ -38,5 +39,7 @@ getEvents()
 eventFormDialog()
 renderAddEventButton()
 registrationForm()
-getChats()
-ChatList()
+
+getUsers()
+.then(getChats)
+.then(ChatList)
