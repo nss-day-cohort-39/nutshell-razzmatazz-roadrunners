@@ -1,3 +1,22 @@
+.registration_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.registrationForm {
+    width:45%;
+    border: 1px solid black;
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+}
+
+.registrationButton {
+    margin-top: 6px;
+}
 .invisible {
     display:none;
 }

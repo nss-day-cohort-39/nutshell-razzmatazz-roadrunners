@@ -33,6 +33,7 @@ contentTarget.addEventListener("click", clickEvent => {
             } else {
                 alert("Email Already Exist")
             }
+            sessionStorage.setItem("activeUser", users.id)
         })
     }
 
@@ -47,7 +48,7 @@ eventHub.addEventListener("allRegistrationClicked", event => {
 //HTML that will be viewed on the web browser
 const render = () => {
     contentTarget.innerHTML = `
-        <article>
+        <article class="registrationForm">
             <h1>Welcome to Nutshell Registration</h1>   
             ${DisplayRegistrationText()}
             <form action="" class="registration invisible">
