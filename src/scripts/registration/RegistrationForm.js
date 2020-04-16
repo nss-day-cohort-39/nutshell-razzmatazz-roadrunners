@@ -27,13 +27,13 @@ contentTarget.addEventListener("click", clickEvent => {
             if (dupFound === undefined) {
                 if (passwordOne === passwordTwo) {
                     saveUsers(newRegistration)
+                    sessionStorage.setItem("activeUser", users.id)
                 } else if (passwordOne !== passwordTwo) {
                     alert("Password Does Not Match")
                 }
             } else {
                 alert("Email Already Exist")
             }
-            sessionStorage.setItem("activeUser", users.id)
         })
     }
 

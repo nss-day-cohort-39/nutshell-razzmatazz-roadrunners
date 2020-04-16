@@ -12,10 +12,15 @@
     align-items: center;
     justify-content: center;
     flex-direction: column; 
+    margin-bottom:1em;
 }
 
 .registrationButton {
     margin-top: 6px;
+}
+
+#showRegistration {
+    margin-bottom: 1em;
 }
 .invisible {
     display:none;
