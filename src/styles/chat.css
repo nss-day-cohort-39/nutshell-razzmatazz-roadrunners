@@ -1,0 +1,9 @@
+.chat_container {
+    display: flex;
+    flex-wrap: wrap;
+    border: solid;
+    justify-content: center;
+    width: 15rem;
+    margin: 1rem;
+    background-color: white;
+  }
